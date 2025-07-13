@@ -1,0 +1,40 @@
+{% extends "linkedinapp/base.html" %}
+{% load static %}
+{% block title %}Profile - LinkedIn Clone{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h4 class="mb-3">My Network</h4>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Suryabhan Singh</h5> 
+                <p class="card-text">Software Engineer at XYZ Company</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <h5 class="mb-3">Connections</h5>
+        <ul class="list-group">
+            <li class="list-group-item">John Doe</li>
+            <li class="list-group-item">Jane Smith</li>
+            <li class="list-group-item">Alice Johnson</li>
+        </ul>
+        <h5 class="mt-4">Recent Activity</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Liked a post by Bob</li>
+            <li class="list-group-item">Commented on a post by Charlie</li>
+            <li class="list-group-item">Shared an article about tech trends</li>
+        </ul>
+        <h5 class="mt-4">Groups</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Tech Enthusiasts</li>
+            <li class="list-group-item">Python Developers</li>
+            <li class="list-group-item">ReactJS Community</li>
+        </ul>
+        <h5 class="mt-4">Events</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Web Development Conference 2025</li>
+            <li class="list-group-item">Python Meetup - March 2025</li>
+            <li class="list-group-item">ReactJS Workshop - April 2025</li>
+        </ul>
+    </div>
+{% endblock %}        

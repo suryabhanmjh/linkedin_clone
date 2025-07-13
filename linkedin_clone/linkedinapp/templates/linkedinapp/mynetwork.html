@@ -1,0 +1,209 @@
+{% extends "linkedinapp/base.html" %}
+{% load static %}
+
+{% block title %}My Network - LinkedIn Clone{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+  <div class="network-wrapper d-flex justify-content-between">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="left-sidebar sticky-sidebar">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h6 class="mb-3">Manage my network</h6>
+          <p>👥 Connections <span class="float-end text-muted">276</span></p>
+          <p>👣 Following & followers</p>
+          <p>👨‍👩‍👧‍👦 Groups</p>
+          <p>📅 Events</p>
+          <p>📄 Pages</p>
+          <p>📰 Newsletters</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h6>Sponsored</h6>
+          <p><strong>IIM Lucknow</strong><br>
+          Executive Learning, IIM Lucknow Style</p>
+          <button class="btn btn-outline-primary btn-sm">Follow</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT MAIN SCROLLABLE CONTENT -->
+    <div class="main-scrollable-content">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h6>Invitations (2)</h6>
+          <div class="d-flex justify-content-between align-items-center bg-light p-2 mb-2">
+            <div>
+              <strong>Tushar Jaiswal</strong> <br>
+              9x Hackathon Winner | Full Stack Developer @Quest Global
+            </div>
+            <div>
+              <button class="btn btn-sm btn-outline-secondary">Ignore</button>
+              <button class="btn btn-sm btn-primary">Accept</button>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center bg-light p-2">
+            <div>
+              <strong>Himalaya Shrivastava</strong><br>
+              Mentor of Change | STEM Educator at IES
+            </div>
+            <div>
+              <button class="btn btn-sm btn-outline-secondary">Ignore</button>
+              <button class="btn btn-sm btn-primary">Accept</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+  <div class="card-body">
+    <h6>Stay in touch through daily games</h6>
+    <div class="d-flex gap-3 flex-wrap">
+      <div class="game-card d-flex align-items-center gap-2 border rounded p-2 shadow-sm">
+        <img src="{% static 'images/zip.png' %}" alt="Zip" class="game-icon">
+        <div>
+          <strong>Zip #118</strong><br>
+          <small>3 played</small>
+        </div>
+      </div>
+      <div class="game-card d-flex align-items-center gap-2 border rounded p-2 shadow-sm">
+        <img src="{% static 'images/queens.png' %}" alt="Queens" class="game-icon">
+        <div>
+          <strong>Queens #439</strong><br>
+          <small>July 13</small>
+        </div>
+      </div>
+      <div class="game-card d-flex align-items-center gap-2 border rounded p-2 shadow-sm">
+        <img src="{% static 'images/tango.png' %}" alt="Tango" class="game-icon">
+        <div>
+          <strong>Tango #279</strong><br>
+          <small>Sunday</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h6>People you may know</h6>
+          <div class="d-flex flex-wrap gap-3">
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/arath.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Arathy P</strong><br>
+                HR Sr Advisor at Amazon<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/apoorva.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Apoorva Jain</strong><br>
+                HR Executive at Tata<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/tohit.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Tohit Khan</strong><br>
+                Sr. Engineer at Dentsu<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/arath.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Arathy P</strong><br>
+                HR Sr Advisor at Amazon<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/apoorva.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Apoorva Jain</strong><br>
+                HR Executive at Tata<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/tohit.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Tohit Khan</strong><br>
+                Sr. Engineer at Dentsu<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/arath.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Arathy P</strong><br>
+                HR Sr Advisor at Amazon<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/apoorva.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Apoorva Jain</strong><br>
+                HR Executive at Tata<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/tohit.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Tohit Khan</strong><br>
+                Sr. Engineer at Dentsu<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/arath.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Arathy P</strong><br>
+                HR Sr Advisor at Amazon<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/apoorva.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Apoorva Jain</strong><br>
+                HR Executive at Tata<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+
+            <div class="card p-2" style="width: 150px;">
+              <img src="{% static 'images/tohit.jpg' %}" class="rounded-circle mx-auto d-block" width="50" height="50">
+              <div class="text-center mt-2">
+                <strong>Tohit Khan</strong><br>
+                Sr. Engineer at Dentsu<br>
+                <button class="btn btn-sm btn-primary mt-2">Connect</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- end right scrollable -->
+  </div>
+</div>
+{% endblock %}
