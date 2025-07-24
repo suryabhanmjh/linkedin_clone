@@ -4,17 +4,477 @@
 {% block title %}Messaging - LinkedIn Clone{% endblock %}
 
 {% block content %}
-    <div class="container mt-4">
-        <h4 class="mb-3">Messaging</h4>
-        <div class="card">
-            <div class="card-body">
-                <p class="mb-2">📩 <strong>New Messages</strong></p>
-                <ul class="list-group">
-                    <li class="list-group-item">Message from Alice</li>
-                    <li class="list-group-item">Message from Bob</li>
-                    <li class="list-group-item">Message from Charlie</li>
-                </ul>
+<div class="container-fluid mt-3 px-4">
+  <div class="row justify-content-center">
+    
+    <!-- Left Sidebar - Conversations List -->
+    <div class="col-lg-3 col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-white border-bottom">
+          <div class="d-flex justify-content-between align-items-center">
+            <h6 class="mb-0">Messaging</h6>
+            <div>
+              <button class="btn btn-sm btn-light me-1">
+                <i class="bi bi-three-dots small"></i>
+              </button>
+              <button class="btn btn-sm btn-light">
+                <i class="bi bi-pencil-square small"></i>
+              </button>
             </div>
+          </div>
+          
+          <!-- Search Bar -->
+          <div class="mt-3">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text bg-light border-end-0">
+                <i class="bi bi-search text-muted small"></i>
+              </span>
+              <input type="text" class="form-control border-start-0 bg-light small" placeholder="Search messages">
+            </div>
+          </div>
         </div>
+
+        <!-- Filter Tabs -->
+        <div class="px-3 pt-3">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link active bg-success text-white small" href="#">Focused</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted small" href="#">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted small" href="#">Unread</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted small" href="#">My Connections</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted small" href="#">InMail</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted small" href="#">Starred</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Conversations List -->
+        <div class="card-body p-0" style="height: 60vh; overflow-y: auto;">
+          
+          <!-- Shabrin L Conversation -->
+          <div class="conversation-item p-3 border-bottom bg-light border-start border-success border-3" style="cursor: pointer;">
+            <div class="d-flex">
+              <div class="position-relative me-3">
+                <img src="{% static 'images/shabrin.jpg' %}" class="rounded-circle" width="40" height="40">
+                <div class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-2 border-white" style="width: 10px; height: 10px;"></div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <h6 class="mb-1 small">Shabrin L</h6>
+                    <small class="text-muted" style="font-size: 0.7rem;">Job Application Status || HRM Counsel</small>
+                  </div>
+                  <div class="text-end">
+                    <small class="text-muted" style="font-size: 0.7rem;">Jul 20</small>
+                    <div class="mt-1">
+                      <button class="btn btn-sm btn-light p-1">
+                        <i class="bi bi-camera-video" style="font-size: 0.7rem;"></i>
+                      </button>
+                      <button class="btn btn-sm btn-light p-1">
+                        <i class="bi bi-star" style="font-size: 0.7rem;"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subhashini Singh -->
+          <div class="conversation-item p-3 border-bottom" style="cursor: pointer;">
+            <div class="d-flex">
+              <div class="position-relative me-3">
+                <img src="{% static 'images/subhashini.jpg' %}" class="rounded-circle" width="40" height="40">
+                <div class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-2 border-white" style="width: 10px; height: 10px;"></div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h6 class="mb-1 small">Subhashini Singh</h6>
+                    <small class="text-muted" style="font-size: 0.7rem;">Subhashini: Hello</small>
+                  </div>
+                  <small class="text-muted" style="font-size: 0.7rem;">Jul 6</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- shraddha saxena -->
+          <div class="conversation-item p-3 border-bottom" style="cursor: pointer;">
+            <div class="d-flex">
+              <div class="position-relative me-3">
+                <img src="{% static 'images/shradham.jpg' %}" class="rounded-circle" width="40" height="40">
+                <div class="position-absolute bottom-0 end-0 bg-secondary rounded-circle border border-2 border-white" style="width: 10px; height: 10px;"></div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h6 class="mb-1 small">shraddha saxena</h6>
+                    <small class="text-muted" style="font-size: 0.7rem;">shraddha: Thank you</small>
+                  </div>
+                  <small class="text-muted" style="font-size: 0.7rem;">Jun 30</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jayveer Singh -->
+          <div class="conversation-item p-3 border-bottom" style="cursor: pointer;">
+            <div class="d-flex">
+              <div class="position-relative me-3">
+                <img src="{% static 'images/jayveer.jpg' %}" class="rounded-circle" width="40" height="40">
+                <div class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-2 border-white" style="width: 10px; height: 10px;"></div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h6 class="mb-1 small">Jayveer Singh</h6>
+                    <small class="text-muted">You: Hi Futa ji, I hope you're doing well! I'm Suryabhan...</small>
+                  </div>
+                  <small class="text-muted" style="font-size: 0.7rem;">Jun 29</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nishaba Akhtar Ansari -->
+          <div class="conversation-item p-3 border-bottom" style="cursor: pointer;">
+            <div class="d-flex">
+              <div class="position-relative me-3">
+                <img src="{% static 'images/nishaba.jpg' %}" class="rounded-circle" width="40" height="40">
+                <div class="position-absolute bottom-0 end-0 bg-secondary rounded-circle border border-2 border-white" style="width: 10px; height: 10px;"></div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h6 class="mb-1 small">Nishaba Akhtar Ansari</h6>
+                    <small class="text-muted">Preparation</small>
+                  </div>
+                  <small class="text-muted" style="font-size: 0.7rem;">Jun 29</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kanchan Sikder -->
+          <div class="conversation-item p-3 border-bottom" style="cursor: pointer;">
+            <div class="d-flex">
+              <div class="position-relative me-3">
+                <img src="{% static 'images/kanchan.jpg' %}" class="rounded-circle" width="40" height="40">
+                <div class="position-absolute bottom-0 end-0 bg-secondary rounded-circle border border-2 border-white" style="width: 10px; height: 10px;"></div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h6 class="mb-1 small">Kanchan Sikder</h6>
+                    <small class="text-muted">You: Hi</small>
+                  </div>
+                  <small class="text-muted" style="font-size: 0.7rem;">Jun 19</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simran Maran -->
+          <div class="conversation-item p-3 border-bottom" style="cursor: pointer;">
+            <div class="d-flex">
+              <div class="position-relative me-3">
+                <img src="{% static 'images/simran.jpg' %}" class="rounded-circle" width="40" height="40">
+                <div class="position-absolute bottom-0 end-0 bg-secondary rounded-circle border border-2 border-white" style="width: 10px; height: 10px;"></div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h6 class="mb-1 small">Simran Maran</h6>
+                    <small class="text-muted">Simran: Hello! Suryabhan</small>
+                  </div>
+                  <small class="text-muted" style="font-size: 0.7rem;">May 23</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ragni Kushwaha -->
+          <div class="conversation-item p-3 border-bottom" style="cursor: pointer;">
+            <div class="d-flex">
+              <div class="position-relative me-3">
+                <img src="{% static 'images/ragni.jpg' %}" class="rounded-circle" width="40" height="40">
+                <div class="position-absolute bottom-0 end-0 bg-secondary rounded-circle border border-2 border-white" style="width: 10px; height: 10px;"></div>
+              </div>
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h6 class="mb-1 small">Ragni Kushwaha</h6>
+                    <small class="text-muted">You: Hmm</small>
+                  </div>
+                  <small class="text-muted" style="font-size: 0.7rem;">May 22</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    <!-- Center Chat Area -->
+    <div class="col-lg-5 col-md-6">
+      <div class="card shadow-sm h-100">
+        <!-- Chat Header -->
+        <div class="card-header bg-white border-bottom">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <img src="{% static 'images/shabrin.jpg' %}" class="rounded-circle me-3" width="35" height="35">
+              <div>
+                <h6 class="mb-0 small">Shabrin L <span class="badge bg-primary ms-1" style="font-size: 0.6rem;">In</span></h6>
+                <small class="text-muted" style="font-size: 0.7rem;">HR Manager: Empower to grow in corporate world with healthy & wealthy lifestyle || Professional & Career Coach.</small>
+                <div class="small text-success" style="font-size: 0.65rem;">• Available on mobile</div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-sm btn-light me-1 p-1">
+                <i class="bi bi-camera-video small"></i>
+              </button>
+              <button class="btn btn-sm btn-light me-1 p-1">
+                <i class="bi bi-star small"></i>
+              </button>
+              <button class="btn btn-sm btn-light p-1">
+                <i class="bi bi-three-dots small"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="card-body" style="height: 50vh; overflow-y: auto;">
+          <div class="text-center mb-3">
+            <small class="text-muted" style="font-size: 0.7rem;">SATURDAY</small>
+          </div>
+
+          <!-- Incoming Message -->
+          <div class="mb-3">
+            <div class="d-flex">
+              <img src="{% static 'images/shabrin.jpg' %}" class="rounded-circle me-2" width="28" height="28">
+              <div>
+                <div class="bg-light p-2 rounded">
+                  <strong class="small">Shabrin L</strong> <span class="badge bg-primary ms-1" style="font-size: 0.6rem;">In</span> <small class="text-muted" style="font-size: 0.65rem;">• 3rd</small>
+                  <div class="mt-1 small" style="font-size: 0.7rem;">10:36 PM</div>
+                </div>
+                <div class="bg-light p-2 rounded mt-2">
+                  <strong class="small">Job Application Status || HRM Counsel</strong>
+                  <div class="mt-2 small" style="font-size: 0.75rem;">
+                    Hi Suryabhan, Hope you're doing well & good with a healthy lifestyle.
+                  </div>
+                  <div class="mt-2 small" style="font-size: 0.75rem;">
+                    We received your job application as you applied for the role of SQL or Python Developer & looking for a better opportunity, being a HR Consultant, we empower you to grab the respective or similar opportunity as per your profile & choice of workplace across India with the support of HR leaders through employee reference process (ERP). Join & follow the community to know the details of current open (onsite
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message Input -->
+        <div class="card-footer bg-white border-top">
+          <div class="input-group input-group-sm">
+            <input type="text" class="form-control border-0 small" placeholder="Write a message..." style="box-shadow: none; font-size: 0.8rem;">
+            <div class="input-group-append d-flex align-items-center">
+              <button class="btn btn-sm btn-light me-1 p-1">
+                <i class="bi bi-image" style="font-size: 0.8rem;"></i>
+              </button>
+              <button class="btn btn-sm btn-light me-1 p-1">
+                <i class="bi bi-paperclip" style="font-size: 0.8rem;"></i>
+              </button>
+              <button class="btn btn-sm btn-light me-1 p-1">
+                <i class="bi bi-emoji-smile" style="font-size: 0.8rem;"></i>
+              </button>
+              <button class="btn btn-primary btn-sm small">Send</button>
+            </div>
+          </div>
+          <div class="mt-2">
+            <button class="btn btn-sm btn-light me-1 p-1">
+              <i class="bi bi-chevron-up" style="font-size: 0.7rem;"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar - Premium & Info -->
+    <div class="col-lg-3 d-none d-lg-block">
+      <div class="position-sticky" style="top: 70px;">
+        
+        <!-- Premium Section -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-body">
+            <h6 class="mb-3 small">Get hired faster with Premium</h6>
+            <p class="small text-muted mb-3" style="font-size: 0.75rem;">Premium InMail is 4.6x more effective in hearing back than cold email.</p>
+            
+            <div class="d-flex align-items-center mb-3">
+              <div class="me-2">
+                <img src="{% static 'images/vk.jpg' %}" class="rounded-circle" width="20" height="20">
+                <img src="{% static 'images/user2.jpg' %}" class="rounded-circle ms-1" width="20" height="20">
+                <img src="{% static 'images/user3.jpg' %}" class="rounded-circle ms-1" width="20" height="20">
+              </div>
+              <small class="text-muted" style="font-size: 0.7rem;">Vikas and millions of other members use Premium</small>
+            </div>
+            
+            <button class="btn btn-warning w-100 mb-2 small">Reactivate Premium: 50% Off</button>
+            <small class="text-muted d-block text-center" style="font-size: 0.7rem;">Cancel anytime. No hidden fees.</small>
+          </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">About</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Accessibility</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Help Center</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Privacy & Terms</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Ad Choices</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Advertising</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Business Services</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Get the LinkedIn app</div>
+                </a>
+              </div>
+              <div class="col-12">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">More</div>
+                </a>
+              </div>
+            </div>
+            
+            <div class="text-center mt-3">
+              <img src="{% static 'images/image.webp' %}" width="16" class="me-1">
+              <small class="text-muted" style="font-size: 0.65rem;">LinkedIn Corporation © 2025</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.conversation-item:hover {
+  background-color: #f8f9fa !important;
+}
+
+.nav-pills .nav-link {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #28a745 !important;
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0 1rem;
+  }
+  
+  .col-lg-3:last-child {
+    display: none;
+  }
+  
+  .col-lg-5 {
+    display: none;
+  }
+  
+  .col-lg-3:first-child {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .col-lg-3:last-child {
+    display: none;
+  }
+  
+  .col-lg-3:first-child {
+    width: 40%;
+  }
+  
+  .col-lg-5 {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const conversationItems = document.querySelectorAll('.conversation-item');
+  
+  conversationItems.forEach(item => {
+    item.addEventListener('click', function() {
+      // Remove active state from all conversations
+      conversationItems.forEach(conv => {
+        conv.classList.remove('bg-light', 'border-start', 'border-success', 'border-3');
+      });
+      
+      // Add active state to clicked conversation
+      this.classList.add('bg-light', 'border-start', 'border-success', 'border-3');
+      
+      // On mobile, hide conversation list and show chat
+      if (window.innerWidth <= 768) {
+        document.querySelector('.col-lg-4').style.display = 'none';
+        document.querySelector('.col-lg-5').style.display = 'block';
+        document.querySelector('.col-lg-5').className = 'col-12';
+      }
+    });
+  });
+});
+</script>
 {% endblock %}

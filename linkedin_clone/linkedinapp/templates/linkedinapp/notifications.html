@@ -4,12 +4,691 @@
 {% block title %}Notifications - LinkedIn Clone{% endblock %}
 
 {% block content %}
-    <div class="container mt-4">
-        <h4 class="mb-3">Notifications</h4>
-        <ul class="list-group">
-            <li class="list-group-item">New connection request from John Doe</li>
-            <li class="list-group-item">Your post received 5 new likes</li>
-            <li class="list-group-item">Reminder: Team meeting at 3 PM</li>
-        </ul>
+<div class="container mt-3">
+  <div class="row">
+
+    <!-- 🔹 Left Sidebar -->
+    <div class="col-lg-3 d-none d-lg-block">
+      <div class="position-sticky" style="top: 70px;">
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body text-center">
+            <img src="{% static 'images/profile.jpg' %}" class="rounded-circle mb-2" width="80" height="80">
+            <h6 class="mb-0">Suryabhan Singh</h6>
+            <small class="text-muted">Full stack developer | Python | Django | c, c++ | java | React</small>
+            <p class="text-muted small mt-1">Bhopal, Madhya Pradesh</p>
+            <div class="mt-2">
+              <span class="badge bg-primary text-white">Fintechedu Solution PVT LTD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h6 class="mb-3">Manage your notifications</h6>
+            <a href="#" class="text-decoration-none d-block mb-2">View settings</a>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- 🔸 Center Notifications Feed -->
+    <div class="col-lg-6">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">Notifications</h4>
+        <div>
+          <button class="btn btn-outline-secondary btn-sm me-2">Mark all as read</button>
+          <button class="btn btn-outline-secondary btn-sm">Settings</button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <ul class="nav nav-tabs border-0 mb-3">
+        <li class="nav-item">
+          <a class="nav-link tab-link active border-0 border-bottom border-success text-success" href="#" data-tab="all">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tab-link text-muted border-0" href="#" data-tab="jobs">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tab-link text-muted border-0" href="#" data-tab="my-posts">My posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tab-link text-muted border-0" href="#" data-tab="mentions">Mentions</a>
+        </li>
+      </ul>
+
+      <!-- Scrollable Notifications List -->
+      <div style="height: 70vh; overflow-y: auto;">
+        
+        <!-- All Tab Content -->
+        <div id="all-content" class="tab-content">
+          <!-- Profile View Notification -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/kundan.jpeg' %}" class="rounded-circle" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Kundan K.</strong> and 2 other people viewed your profile. See the full list with Premium.
+                      <div class="text-muted small mt-1">1h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-primary btn-sm mt-2">Reactivate Premium</button>
+                  <div class="small text-muted mt-1">Cancel anytime, for any reason.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post Activity Notification -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/user2.jpg' %}" class="rounded-circle" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Anshul Gangrade</strong> posted: Day 2 of my journey to become a better problem solver and enhance my coding skills.
+                      <div class="text-muted small mt-1">3h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Job Opportunity -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <img src="{% static 'images/company1.jpg' %}" class="me-3" width="48" height="48">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Python Developer:</strong> new opportunities in Hyderabad.
+                      <div class="text-muted small mt-1">4h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">View jobs</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Cloud Notification -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <img src="{% static 'images/google_cloud.jpg' %}" class="me-3" width="48" height="48">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      New from <strong>Google Cloud</strong> in Transformation Today: Our top guides to building, evaluating, and deploying...
+                      <div class="text-muted small mt-1">9h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mastercard Notification -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <img src="{% static 'images/mastercard.jpg' %}" class="me-3" width="48" height="48">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      New from <strong>Mastercard</strong> in Inside the Circles: Crypto's next chapter
+                      <div class="text-muted small mt-1">12h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Software Developer Job -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <img src="{% static 'images/company2.jpg' %}" class="me-3" width="48" height="48">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Software Developer:</strong> new opportunities in Noida.
+                      <div class="text-muted small mt-1">13h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">View jobs</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post Impressions -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <img src="{% static 'images/analytics.jpg' %}" class="me-3" width="48" height="48">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      Your posts got <strong>46 impressions</strong> last week. View your analytics.
+                      <div class="text-muted small mt-1">1d</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monday Jobs Report -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <img src="{% static 'images/monday_jobs.jpg' %}" class="me-3" width="48" height="48">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      Your Monday Jobs Report: 20 companies increased demand for Developer roles last week. View more career insights.
+                      <div class="text-muted small mt-1">1d</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prismetric Technologies -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <img src="{% static 'images/prismetric.jpg' %}" class="me-3" width="48" height="48">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      New from <strong>Prismetric Technologies Pvt Ltd</strong> in Prismetric TechBytes: OpenAI Unveils ChatGPT Agent: The Next...
+                      <div class="text-muted small mt-1">1d</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Stack Engineer -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <img src="{% static 'images/nxtwave.jpg' %}" class="me-3" width="48" height="48">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>NxtWave</strong> is promoting a high priority Software Development Engineer - II (Full Stack) role in <strong>Hyderabad</strong> that matches your job alert.
+                      <div class="text-muted small mt-1">19h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">Apply early</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Jobs Tab Content -->
+        <div id="jobs-content" class="tab-content" style="display: none;">
+          <!-- Python Developer Job -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/company1.jpg' %}" class="rounded" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Python Developer:</strong> new opportunities in Hyderabad.
+                      <div class="text-muted small mt-1">5h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">View jobs</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Software Developer Job -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/company2.jpg' %}" class="rounded" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Software Developer:</strong> new opportunities in Noida.
+                      <div class="text-muted small mt-1">14h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">View jobs</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NxtWave Job -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/nxtwave.jpg' %}" class="rounded" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>NxtWave</strong> is promoting a high priority Software Development Engineer - II (Full Stack) role in <strong>Hyderabad</strong> that matches your job alert.
+                      <div class="text-muted small mt-1">19h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">Apply early</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Stack Engineer -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/company3.jpg' %}" class="rounded" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Full Stack Engineer:</strong> new opportunities in Hyderabad.
+                      <div class="text-muted small mt-1">22h</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">View jobs</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry Level Software Engineer -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/syft_ai.jpg' %}" class="rounded" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Entry Level Software Engineer</strong> at Syft AI and 9 other recommendations for you.
+                      <div class="text-muted small mt-1">1d</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">View jobs</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Junior Full Stack Developer -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/zevo360.jpg' %}" class="rounded" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      See 6 jobs similar to one you recently viewed: <strong>Junior Full Stack Developer</strong> at Zevo360 Technologies Pvt Ltd.
+                      <div class="text-muted small mt-1">4d</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm mt-2">View jobs</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personal Message to Recruiter -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/keka_hr_logo.jpeg' %}" class="rounded" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      Stand out by sending a personal message to the recruiter at <strong>Keka HR</strong>.
+                      <div class="text-muted small mt-1">1w</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- My Posts Tab Content -->
+        <div id="my-posts-content" class="tab-content" style="display: none;">
+          <!-- Tanvi Mandloi Reaction -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/tanvi.jpg' %}" class="rounded-circle" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Tanvi Mandloi</strong> and 10 others reacted to your post.
+                      <div class="mt-2 p-2 bg-light rounded">
+                        <small>🎯 Exciting News! 🎯 I am thrilled to announce that I have been...</small>
+                      </div>
+                      <div class="text-muted small mt-2">11 reactions • 2 comments</div>
+                      <div class="text-muted small">6d</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aakash Barasiya Reaction -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/aakash.jpg' %}" class="rounded-circle" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Aakash Barasiya</strong> and 32 others reacted to your post.
+                      <div class="mt-2 p-2 bg-light rounded">
+                        <small>Proud Moment! ✨✨ Participated in the Lakecity Hack - Idea thon (22-23 April, 2025) organized by...</small>
+                      </div>
+                      <div class="text-muted small mt-2">33 reactions • 7 comments</div>
+                      <div class="text-muted small">1w</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Angel Patne Comment -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/angel.jpg' %}" class="rounded-circle" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Angel Patne</strong> and 1 other commented on your post.
+                      <div class="mt-2 p-2 bg-light rounded">
+                        <small><strong>Congrats Suryabhan!</strong> 🎉</small>
+                      </div>
+                      <div class="mt-2 p-2 bg-light rounded">
+                        <small>🎯 Exciting News! 🎯 I am thrilled to announce that I have been selected for a...</small>
+                      </div>
+                      <div class="text-muted small mt-2">11 reactions • 2 comments</div>
+                      <div class="text-muted small">2w</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ananya Pandey Reaction -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/ananya.jpg' %}" class="rounded-circle" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Ananya Pandey</strong> reacted to your post.
+                      <div class="mt-2 p-2 bg-light rounded">
+                        <small>🎯 Exciting News! 🎯 I am thrilled to announce that I have been...</small>
+                      </div>
+                      <div class="text-muted small mt-2">11 reactions • 2 comments</div>
+                      <div class="text-muted small">3w</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prof. Shiv Shankar Prajapati -->
+          <div class="card mb-2 shadow-sm">
+            <div class="card-body p-3">
+              <div class="d-flex">
+                <div class="position-relative me-3">
+                  <img src="{% static 'images/prof_shiv.jpg' %}" class="rounded-circle" width="48" height="48">
+                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px;"></div>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <strong>Prof. Shiv Shankar Prajapati</strong> reacted to your post.
+                      <div class="mt-2 p-2 bg-light rounded">
+                        <small>🎯 Exciting News! 🎯 I am thrilled to announce that I have been...</small>
+                      </div>
+                      <div class="text-muted small mt-2">11 reactions • 2 comments</div>
+                      <div class="text-muted small">3w</div>
+                    </div>
+                    <button class="btn btn-sm">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mentions Tab Content -->
+        <div id="mentions-content" class="tab-content" style="display: none;">
+          <div class="text-center py-5">
+            <div class="mb-4">
+              <i class="bi bi-at" style="font-size: 4rem; color: #ccc;"></i>
+            </div>
+            <h5 class="text-muted">No new mentions</h5>
+            <p class="text-muted">When someone tags you in a post or comment, that notification will appear here.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🔹 Right Sidebar -->
+    <div class="col-lg-3 mt-4 mt-lg-0">
+      <div class="position-sticky" style="top: 70px;">
+        
+        <!-- Messaging Section -->
+        <div class="card mb-3 shadow-sm">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h6 class="mb-0">Messaging</h6>
+            <div>
+              <button class="btn btn-sm">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <button class="btn btn-sm">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button class="btn btn-sm">
+                <i class="bi bi-chevron-up"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- LinkedIn Learning Ad -->
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body text-center">
+            <img src="{% static 'images/image.webp' %}" class="mb-2" width="60">
+            <h6>Advance your career with LinkedIn Learning</h6>
+            <p class="small text-muted">Get personalized course recommendations</p>
+            <button class="btn btn-outline-primary btn-sm">Try for free</button>
+          </div>
+        </div>
+
+        <!-- Today's News -->
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h6 class="mb-3">Today's most viewed news</h6>
+            <div class="mb-3">
+              <h6 class="small mb-1">Tech industry layoffs continue</h6>
+              <small class="text-muted">2h ago • 1,234 readers</small>
+            </div>
+            <div class="mb-3">
+              <h6 class="small mb-1">AI revolution in healthcare</h6>
+              <small class="text-muted">4h ago • 987 readers</small>
+            </div>
+            <div class="mb-3">
+              <h6 class="small mb-1">Remote work trends 2024</h6>
+              <small class="text-muted">6h ago • 756 readers</small>
+            </div>
+            <a href="#" class="text-decoration-none small">Show more</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove active class from all tabs
+            tabLinks.forEach(tab => {
+                tab.classList.remove('active', 'text-success', 'border-success');
+                tab.classList.add('text-muted');
+            });
+            
+            // Add active class to clicked tab
+            this.classList.add('active', 'text-success', 'border-success', 'border-bottom');
+            this.classList.remove('text-muted');
+            
+            // Hide all tab contents
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Show selected tab content
+            const tabName = this.getAttribute('data-tab');
+            const activeContent = document.getElementById(tabName + '-content');
+            if (activeContent) {
+                activeContent.style.display = 'block';
+            }
+        });
+    });
+});
+</script>
 {% endblock %}

@@ -1,40 +1,531 @@
 {% extends "linkedinapp/base.html" %}
 {% load static %}
+
 {% block title %}Profile - LinkedIn Clone{% endblock %}
 
 {% block content %}
-    <div class="container mt-4">
-        <h4 class="mb-3">My Network</h4>
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Suryabhan Singh</h5> 
-                <p class="card-text">Software Engineer at XYZ Company</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+<div class="container mt-3">
+  <div class="row">
+
+    <!-- 🔹 Left Sidebar -->
+    <div class="col-lg-3 d-none d-lg-block">
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body text-center">
+          <img src="{% static 'images/profile.jpg' %}" class="rounded-circle mb-2" width="80" height="80">
+          <h6 class="mb-0">Suryabhan Singh</h6>
+          <small class="text-muted">Full Stack Developer | Python | React</small>
         </div>
-        <h5 class="mb-3">Connections</h5>
-        <ul class="list-group">
-            <li class="list-group-item">John Doe</li>
-            <li class="list-group-item">Jane Smith</li>
-            <li class="list-group-item">Alice Johnson</li>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between">
+            <small>Profile viewers</small>
+            <span class="text-primary fw-bold">41</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <small>Post impressions</small>
+            <span class="text-primary fw-bold">43</span>
+          </li>
         </ul>
-        <h5 class="mt-4">Recent Activity</h5>
-        <ul class="list-group">
-            <li class="list-group-item">Liked a post by Bob</li>
-            <li class="list-group-item">Commented on a post by Charlie</li>
-            <li class="list-group-item">Shared an article about tech trends</li>
-        </ul>
-        <h5 class="mt-4">Groups</h5>
-        <ul class="list-group">
-            <li class="list-group-item">Tech Enthusiasts</li>
-            <li class="list-group-item">Python Developers</li>
-            <li class="list-group-item">ReactJS Community</li>
-        </ul>
-        <h5 class="mt-4">Events</h5>
-        <ul class="list-group">
-            <li class="list-group-item">Web Development Conference 2025</li>
-            <li class="list-group-item">Python Meetup - March 2025</li>
-            <li class="list-group-item">ReactJS Workshop - April 2025</li>
-        </ul>
+      </div>
+
+      <!-- Analytics Section -->
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0">Analytics</h6>
+            <i class="bi bi-eye text-muted"></i>
+          </div>
+          <small class="text-muted">🔒 Private to you</small>
+          
+          <div class="row mt-3">
+            <div class="col-4 text-center">
+              <div class="d-flex align-items-center mb-1">
+                <i class="bi bi-people me-1"></i>
+                <strong>41</strong>
+              </div>
+              <small class="text-muted">profile views</small>
+              <p class="text-muted small mt-1">Discover who's viewed your profile.</p>
+            </div>
+            <div class="col-4 text-center">
+              <div class="d-flex align-items-center mb-1">
+                <i class="bi bi-bar-chart me-1"></i>
+                <strong>43</strong>
+              </div>
+              <small class="text-muted">post impressions</small>
+              <p class="text-muted small mt-1">Check out who's engaging with your posts.</p>
+            </div>
+            <div class="col-4 text-center">
+              <div class="d-flex align-items-center mb-1">
+                <i class="bi bi-search me-1"></i>
+                <strong>4</strong>
+              </div>
+              <small class="text-muted">search appearances</small>
+              <p class="text-muted small mt-1">See how often you appear in search results.</p>
+            </div>
+          </div>
+          
+          <div class="text-center mt-3">
+            <a href="#" class="text-decoration-none">Show all analytics →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6>Saved Items</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-bookmark me-2"></i> My items</li>
+            <li class="mb-2"><i class="bi bi-people me-2"></i> Groups</li>
+            <li><i class="bi bi-calendar-event me-2"></i> Events</li>
+          </ul>
+        </div>
+      </div>
     </div>
-{% endblock %}        
+
+    <!-- 🔸 Center Main Profile Section -->
+    <div class="col-lg-6">
+      <!-- Profile Card -->
+      <div class="card mb-3 shadow-sm">
+        <div class="position-relative">
+          <img src="{% static 'images/banner.jpg' %}" class="w-100" style="height: 200px; object-fit: cover;">
+          <img src="{% static 'images/profile.jpg' %}" class="rounded-circle border border-3 border-white position-absolute" style="width: 110px; height: 110px; bottom: -55px; left: 20px;">
+          <button class="btn btn-light btn-sm position-absolute" style="top: 10px; right: 10px;">
+            <i class="bi bi-pencil"></i>
+          </button>
+        </div>
+        <div class="card-body pt-5">
+          <div class="d-flex justify-content-between">
+            <div>
+              <h4>Suryabhan (vicky) Singh <img src="{% static 'images/verified.png' %}" width="18" class="ms-1"></h4>
+              <small class="text-muted">He/Him</small>
+              <p class="mb-1 fw-semibold">Full stack developer | Python | Django | c, c++ | java | React</p>
+              <p class="text-muted mb-1">Bhopal, Madhya Pradesh, India · <a href="#" class="text-decoration-none">Contact info</a></p>
+              <div class="mb-2">
+                <span class="me-3"><a href="#" class="text-decoration-none">305 connections</a></span>
+                <span><a href="#" class="text-decoration-none fw-bold text-primary">500+ connections</a></span>
+              </div>
+              <div class="mt-2">
+                <span class="badge bg-light text-dark me-1">Fintechedu Solution PVT LTD</span>
+                <span class="badge bg-light text-dark">Sage university bhopal</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <button class="btn btn-primary btn-sm me-2">Open to</button>
+            <button class="btn btn-outline-secondary btn-sm me-2">Add profile section</button>
+            <button class="btn btn-outline-secondary btn-sm me-2">Enhance profile</button>
+            <button class="btn btn-outline-secondary btn-sm">Resources</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open to Work -->
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="d-flex">
+              <div class="bg-success rounded me-3 p-2">
+                <i class="bi bi-briefcase text-white"></i>
+              </div>
+              <div>
+                <h6 class="mb-1">Open to work</h6>
+                <p class="mb-0 text-muted">Full-stack Developer and Python Developer roles</p>
+                <a href="#" class="text-decoration-none small">Show details</a>
+              </div>
+            </div>
+            <button class="btn btn-outline-secondary btn-sm">
+              <i class="bi bi-pencil"></i>
+            </button>
+          </div>
+          <div class="mt-2 p-2 bg-light rounded">
+            <small class="text-muted">Share that you're hiring and attract qualified candidates.</small>
+            <div class="mt-1">
+              <a href="#" class="text-decoration-none small fw-semibold">Get started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Section -->
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="mb-0">Activity</h5>
+              <a href="#" class="text-decoration-none">307 followers</a>
+            </div>
+            <button class="btn btn-outline-primary btn-sm">Create a post</button>
+          </div>
+          
+          <div class="border-bottom pb-2 mb-3">
+            <div class="btn-group w-100" role="group">
+              <button type="button" class="btn btn-success btn-sm">Posts</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm">Comments</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm">Images</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm">Documents</button>
+            </div>
+          </div>
+
+          <!-- Recent Activity Posts -->
+          <div class="d-flex mb-3">
+            <img src="{% static 'images/profile.jpg' %}" class="rounded-circle me-3" width="40" height="40">
+            <div class="flex-grow-1">
+              <div class="d-flex align-items-center mb-1">
+                <strong class="me-2">Suryabhan Singh</strong>
+                <img src="{% static 'images/verified.png' %}" width="16" class="me-2">
+                <span class="text-muted small">• You</span>
+              </div>
+              <p class="small text-muted mb-1">Full stack developer | Python | Django | c, c++ | java | React • 2w • Edited</p>
+              <p class="mb-2">🎯 Exciting News! 🚀</p>
+              <p class="mb-2">I am thrilled to announce that I have been ...more</p>
+              <img src="{% static 'images/gis.jpg' %}" class="img-fluid rounded mb-2" alt="Post image">
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <img src="{% static 'images/profile.jpg' %}" class="rounded-circle me-3" width="40" height="40">
+            <div class="flex-grow-1">
+              <div class="d-flex align-items-center mb-1">
+                <strong class="me-2">Suryabhan Singh</strong>
+                <img src="{% static 'images/verified.png' %}" width="16" class="me-2">
+                <span class="text-muted small">• You</span>
+              </div>
+              <p class="small text-muted mb-1">Full stack developer | Python | Django | c, c++ | java | React • 1mo • Edited</p>
+              <p class="mb-2">🚀 Excited to share a new milestone in my journey!</p>
+              <p class="mb-2">I'm grateful to have secured an Internship Offer as a Frontend Developer Intern at Fintechedu ...more</p>
+              <img src="{% static 'images/offer.jpg' %}" class="img-fluid rounded mb-2" alt="Post image">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggested Section -->
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h6>Suggested for you</h6>
+          <div class="d-flex align-items-center">
+            <div class="bg-secondary rounded me-3 p-2">
+              <i class="bi bi-file-text text-white"></i>
+            </div>
+            <div>
+              <p class="mb-1 fw-semibold">Write a summary to highlight your personality or work experience</p>
+              <small class="text-muted">Members who include a summary receive up to 3.9 times as many profile views.</small>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary btn-sm mt-2">Add a summary</button>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">Experience</h5>
+            <div>
+              <button class="btn btn-outline-secondary btn-sm me-2">
+                <i class="bi bi-plus"></i>
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-pencil"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <img src="{% static 'images/fintechedu.jpg' %}" class="me-3" width="48" height="48" style="object-fit: cover;">
+            <div class="flex-grow-1">
+              <h6 class="mb-1">Frontend Developer</h6>
+              <p class="mb-1">Fintechedu Solution PVT LTD · Internship</p>
+              <p class="text-muted small mb-1">May 2025 - Present · 3 mos</p>
+              <p class="text-muted small mb-2">Bhopal, Madhya Pradesh, India · Remote</p>
+              <p class="mb-2">Engaged in live frontend development projects using React.js and Tailwind CSS, focusing on building responsive and dynamic user interfaces. Collaborated with the development team via Git for version control and ...see more</p>
+              <div class="mb-2">
+                <span class="badge bg-light text-dark me-1"><i class="bi bi-heart me-1"></i>Full-Stack Development</span>
+                <span class="badge bg-light text-dark me-1">JavaScript</span>
+                <span class="text-muted">and +8 skills</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">Education</h5>
+            <div>
+              <button class="btn btn-outline-secondary btn-sm me-2">
+                <i class="bi bi-plus"></i>
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-pencil"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- First Education Entry -->
+          <div class="d-flex mb-4">
+            <img src="{% static 'images/sage.jpg' %}" class="rounded me-3" width="48" height="48" style="object-fit: cover;">
+            <div class="flex-grow-1">
+              <h6 class="mb-1">Sage university bhopal</h6>
+              <p class="mb-1">Computer Science</p>
+              <p class="text-muted small mb-2">2022 - 2026</p>
+              <div class="mb-2">
+                <span class="badge bg-light text-dark"><i class="bi bi-heart me-1"></i>Full-Stack Development</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Education Entry -->
+          <div class="d-flex">
+            <img src="{% static 'images/sage.jpg' %}" class="rounded me-3" width="48" height="48" style="object-fit: cover;">
+            <div class="flex-grow-1">
+              <h6 class="mb-1">SAGE University Bhopal</h6>
+              <p class="mb-1">B. Tech, Computer science engineering</p>
+              <p class="text-muted small mb-2">Aug 2022 - Jun 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">Skills</h5>
+            <div>
+              <button class="btn btn-outline-secondary btn-sm me-2">
+                <i class="bi bi-plus"></i>
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-pencil"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Skills List -->
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="mb-0">C#</h6>
+            </div>
+            <hr class="my-2">
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="mb-0">C++</h6>
+            </div>
+            <div class="d-flex align-items-center">
+              <img src="{% static 'images/fintechedu.jpg' %}" class="rounded me-2" width="24" height="24">
+              <small class="text-muted">Frontend Developer at Fintechedu Solution PVT LTD</small>
+            </div>
+            <hr class="my-2">
+          </div>
+
+          <div class="text-center">
+            <a href="#" class="text-decoration-none fw-semibold">Show all 17 skills →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interests Section -->
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h5 class="mb-3">Interests</h5>
+          
+          <!-- Tabs -->
+          <ul class="nav nav-tabs border-0 mb-3">
+            <li class="nav-item">
+              <a class="nav-link active text-success border-0 border-bottom border-success" href="#">Companies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted border-0" href="#">Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted border-0" href="#">Newsletters</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted border-0" href="#">Schools</a>
+            </li>
+          </ul>
+
+          <!-- Companies Content -->
+          <div class="mb-3">
+            <div class="d-flex align-items-center mb-3">
+              <img src="{% static 'images/ibm.jpeg' %}" class="me-3" width="48" height="48">
+              <div class="flex-grow-1">
+                <h6 class="mb-1">IBM</h6>
+                <small class="text-muted">18,488,418 followers</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-secondary btn-sm w-100 mb-3">
+              <i class="bi bi-check me-1"></i>Following
+            </button>
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex align-items-center mb-3">
+              <img src="{% static 'images/microsoft.jpg' %}" class="me-3" width="48" height="48">
+              <div class="flex-grow-1">
+                <h6 class="mb-1">Microsoft</h6>
+                <small class="text-muted">25,927,034 followers</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-secondary btn-sm w-100 mb-3">
+              <i class="bi bi-check me-1"></i>Following
+            </button>
+          </div>
+
+          <div class="text-center">
+            <a href="#" class="text-decoration-none fw-semibold">Show all companies →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 Right Sidebar -->
+    <div class="col-lg-3 mt-4 mt-lg-0">
+      <div class="position-sticky" style="top: 70px;">
+        <!-- Profile Language -->
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="mb-0">Profile language</h6>
+              <i class="bi bi-pencil text-muted"></i>
+            </div>
+            <p class="mb-0">English</p>
+          </div>
+        </div>
+
+        <!-- Public Profile URL -->
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="mb-0">Public profile & URL</h6>
+              <i class="bi bi-pencil text-muted"></i>
+            </div>
+            <p class="mb-0 small text-muted">www.linkedin.com/in/suryabhan-singh99</p>
+          </div>
+        </div>
+
+        <!-- Who your viewers also viewed -->
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h6 class="mb-0">Who your viewers also viewed</h6>
+              <i class="bi bi-eye text-muted"></i>
+            </div>
+            <small class="text-muted">🔒 Private to you</small>
+
+            <div class="d-flex align-items-center mb-3 mt-3">
+              <img src="{% static 'images/vk.jpg' %}" class="rounded-circle me-2" width="40" height="40">
+              <div class="flex-grow-1">
+                <div class="d-flex align-items-center">
+                  <strong class="small">Vikas Kumar</strong>
+                  <span class="badge bg-success text-white ms-2 small">1st</span>
+                </div>
+                <small class="text-muted">Android Developer || Full Stack Web Developer || Firebase ||...</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-secondary btn-sm w-100 mb-3">Message</button>
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="{% static 'images/ap.jpg' %}" class="rounded-circle me-2" width="40" height="40">
+              <div class="flex-grow-1">
+                <div class="d-flex align-items-center">
+                  <strong class="small">Amit Patel</strong>
+                  <span class="badge bg-success text-white ms-2 small">1st</span>
+                </div>
+                <small class="text-muted">Artificial intelligence developer | Data Science Trainer | Pytho...</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-secondary btn-sm w-100 mb-2">Message</button>
+          </div>
+        </div>
+
+        <!-- People you may know -->
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <h6 class="mb-3">People you may know</h6>
+            <small class="text-muted">From your industry</small>
+
+            <div class="d-flex align-items-center mb-3 mt-3">
+              <img src="{% static 'images/user3.jpg' %}" class="rounded-circle me-2" width="40" height="40">
+              <div class="flex-grow-1">
+                <div class="d-flex align-items-center">
+                  <strong class="small">Punam Vishwas</strong>
+                  <img src="{% static 'images/verified.png' %}" width="14" class="ms-1">
+                </div>
+                <small class="text-muted">Human Resources Manager at Dream Filler Software Solutio...</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-primary btn-sm w-100 mb-3">Connect</button>
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="{% static 'images/user4.jpg' %}" class="rounded-circle me-2" width="40" height="40">
+              <div class="flex-grow-1">
+                <strong class="small">Hitanshi Lalwani</strong>
+                <small class="text-muted d-block">Team Lead Frontend Engineer | ReactJs, NextJs, JavaScript |...</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-primary btn-sm w-100 mb-3">Connect</button>
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="{% static 'images/user5.jpg' %}" class="rounded-circle me-2" width="40" height="40">
+              <div class="flex-grow-1">
+                <div class="d-flex align-items-center">
+                  <strong class="small">Avani Dubey</strong>
+                </div>
+                <small class="text-muted">Student at Sage University</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-primary btn-sm w-100 mb-3">Connect</button>
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="{% static 'images/user6.jpg' %}" class="rounded-circle me-2" width="40" height="40">
+              <div class="flex-grow-1">
+                <div class="d-flex align-items-center">
+                  <strong class="small">Priyanshu Gour</strong>
+                  <img src="{% static 'images/verified.png' %}" width="14" class="ms-1">
+                </div>
+                <small class="text-muted">SDE @Solve8 | Reactive Programming | Software...</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-primary btn-sm w-100 mb-3">Connect</button>
+
+            <div class="d-flex align-items-center mb-3">
+              <img src="{% static 'images/user7.jpg' %}" class="rounded-circle me-2" width="40" height="40">
+              <div class="flex-grow-1">
+                <div class="d-flex align-items-center">
+                  <strong class="small">Chandrabhushan Kumar</strong>
+                  <img src="{% static 'images/verified.png' %}" width="14" class="ms-1">
+                </div>
+                <small class="text-muted">Digital Marketing</small>
+              </div>
+            </div>
+            <button class="btn btn-outline-primary btn-sm w-100 mb-2">Connect</button>
+
+            <div class="text-center mt-3">
+              <a href="#" class="text-decoration-none">Show all</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium Suggestion -->
+        <div class="card shadow-sm">
+          <div class="card-body text-center">
+            <div class="text-warning mb-2">
+              <i class="bi bi-award"></i>
+            </div>
+            <p class="small mb-2"><strong>Show all with Premium</strong></p>
+            <p class="small text-muted mb-3">Unlock Premium features and see who viewed your profile</p>
+            <button class="btn btn-warning btn-sm">Reactivate Premium</button>
+            <p class="small text-muted mt-2">50% Off</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

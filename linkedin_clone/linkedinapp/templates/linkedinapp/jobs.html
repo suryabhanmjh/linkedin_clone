@@ -4,12 +4,461 @@
 {% block title %}Jobs - LinkedIn Clone{% endblock %}
 
 {% block content %}
-    <div class="container mt-4">
-        <h4 class="mb-3">Job Listings</h4>
-        <ul class="list-group">
-            <li class="list-group-item">Software Engineer at XYZ Company</li>
-            <li class="list-group-item">Product Manager at ABC Corporation</li>
-            <li class="list-group-item">Data Scientist at Tech Solutions</li>
-        </ul>
+<div class="container-fluid mt-3 px-4">
+  <div class="row justify-content-center">
+    
+    <!-- Left Sidebar -->
+    <div class="col-lg-3 col-md-4">
+      <div class="position-sticky" style="top: 70px;">
+        
+        <!-- Profile Section -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-body text-center">
+            <img src="{% static 'images/profile.jpg' %}" class="rounded-circle mb-2" width="80" height="80">
+            <h6 class="mb-1">Suryabhan Singh</h6>
+            <img src="{% static 'images/verified.png' %}" width="16" class="mb-2">
+            <p class="small text-muted mb-2">Full stack developer | Python | Django | c, c++ | java | React</p>
+            <p class="small text-muted">Bhopal, Madhya Pradesh</p>
+            <div class="mt-2">
+              <span class="badge bg-light text-dark small">Fintechedu Solution PVT LTD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preferences -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-list-ul me-2"></i>
+              <h6 class="mb-0 small">Preferences</h6>
+            </div>
+            
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-bookmark me-2"></i>
+              <span class="small">My jobs</span>
+            </div>
+            
+            <div class="d-flex align-items-center">
+              <i class="bi bi-graph-up me-2 text-warning"></i>
+              <span class="small">My Career Insights</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post a free job -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-pencil-square me-2 text-primary"></i>
+              <a href="#" class="text-decoration-none small">Post a free job</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">About</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Accessibility</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Help Center</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Privacy & Terms</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Ad Choices</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Advertising</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Business Services</div>
+                </a>
+              </div>
+              <div class="col-6 mb-2">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">Get the LinkedIn app</div>
+                </a>
+              </div>
+              <div class="col-12">
+                <a href="#" class="text-decoration-none text-muted">
+                  <div style="font-size: 0.7rem;">More</div>
+                </a>
+              </div>
+            </div>
+            
+            <div class="text-center mt-3">
+              <img src="{% static 'images/linkedin_logo.png' %}" width="16" class="me-1">
+              <small class="text-muted" style="font-size: 0.65rem;">LinkedIn Corporation © 2025</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <!-- Center Content -->
+    <div class="col-lg-6 col-md-8">
+      
+      <!-- Job Collections -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0">Explore with job collections</h6>
+            <a href="#" class="text-decoration-none small">Show all →</a>
+          </div>
+          
+          <div class="row">
+            <div class="col-3 text-center">
+              <div class="bg-light rounded p-3 mb-2">
+                <i class="bi bi-check-circle text-success" style="font-size: 1.5rem;"></i>
+              </div>
+              <small>Easy Apply</small>
+            </div>
+            <div class="col-3 text-center">
+              <div class="bg-light rounded p-3 mb-2">
+                <i class="bi bi-person-circle text-primary" style="font-size: 1.5rem;"></i>
+              </div>
+              <small>HR</small>
+            </div>
+            <div class="col-3 text-center">
+              <div class="bg-light rounded p-3 mb-2">
+                <i class="bi bi-house text-info" style="font-size: 1.5rem;"></i>
+              </div>
+              <small>Remote</small>
+            </div>
+            <div class="col-3 text-center">
+              <div class="bg-light rounded p-3 mb-2">
+                <i class="bi bi-three-dots text-secondary" style="font-size: 1.5rem;"></i>
+              </div>
+              <small>More</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Listings -->
+      <div style="height: 70vh; overflow-y: auto;">
+        
+        <!-- Junior Software Engineer -->
+        <div class="card shadow-sm mb-2">
+          <div class="card-body p-3">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex">
+                <img src="{% static 'images/taskify.jpg' %}" class="me-3" width="48" height="48" style="object-fit: cover;">
+                <div class="flex-grow-1">
+                  <h6 class="mb-1 text-primary">Junior Software Engineer</h6>
+                  <p class="mb-1 small">Taskify · Bengaluru, Karnataka, India (Remote)</p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-check-circle text-success me-1"></i>
+                    <small class="text-muted">Actively reviewing applicants</small>
+                  </div>
+                  <div class="mb-2">
+                    <span class="badge bg-primary text-white small">Easy Apply</span>
+                    <span class="text-muted small ms-2">Promoted ·</span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-sm">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Engineer Entry Level -->
+        <div class="card shadow-sm mb-2">
+          <div class="card-body p-3">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex">
+                <img src="{% static 'images/procedure.jpg' %}" class="me-3" width="48" height="48" style="object-fit: cover;">
+                <div class="flex-grow-1">
+                  <h6 class="mb-1 text-primary">Software Engineer - Entry Level</h6>
+                  <p class="mb-1 small">Procedure · India (Remote)</p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-check-circle text-success me-1"></i>
+                    <small class="text-muted">Actively reviewing applicants</small>
+                  </div>
+                  <div class="mb-2">
+                    <span class="badge bg-primary text-white small">Easy Apply</span>
+                    <span class="text-muted small ms-2">Promoted ·</span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-sm">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center my-3">
+          <hr class="flex-grow-1">
+          <a href="#" class="text-decoration-none small mx-3">Show all →</a>
+          <hr class="flex-grow-1">
+        </div>
+
+        <!-- Hiring in your network -->
+        <div class="mb-4">
+          <h6 class="mb-2">Hiring in your network</h6>
+          <p class="small text-muted mb-3">Jobs that people in your network are hiring for</p>
+
+          <!-- Full Stack Engineer -->
+          <div class="card shadow-sm mb-2">
+            <div class="card-body p-3">
+              <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                  <img src="{% static 'images/nuthub.jpg' %}" class="me-3" width="48" height="48" style="object-fit: cover;">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-1 text-primary">Full Stack Engineer</h6>
+                    <p class="mb-1 small">Nuthub Consulting Private Limited · Bhopal, Madhya Pradesh, India (Remote)</p>
+                    <div class="d-flex align-items-center mb-2">
+                      <img src="{% static 'images/connection1.jpg' %}" class="rounded-circle me-1" width="16" height="16">
+                      <img src="{% static 'images/connection2.jpg' %}" class="rounded-circle me-1" width="16" height="16">
+                      <small class="text-muted">17 mutual connections with the hiring team</small>
+                    </div>
+                    <div class="mb-2">
+                      <span class="badge bg-primary text-white small">Easy Apply</span>
+                      <span class="text-muted small ms-2">Promoted ·</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-sm">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Stack Engineer LawSikho -->
+          <div class="card shadow-sm mb-2">
+            <div class="card-body p-3">
+              <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                  <img src="{% static 'images/lawsikho.jpg' %}" class="me-3" width="48" height="48" style="object-fit: cover;">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-1 text-primary">Full Stack Engineer <img src="{% static 'images/verified.png' %}" width="14" class="ms-1"></h6>
+                    <p class="mb-1 small">LawSikho · Kolkata, West Bengal, India (Remote)</p>
+                    <div class="d-flex align-items-center mb-2">
+                      <img src="{% static 'images/connection3.jpg' %}" class="rounded-circle me-1" width="16" height="16">
+                      <small class="text-muted">1 mutual connection with the hiring team</small>
+                    </div>
+                    <div class="mb-2">
+                      <span class="badge bg-primary text-white small">Easy Apply</span>
+                      <span class="text-muted small ms-2">Promoted ·</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-sm">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Stack Developer -->
+          <div class="card shadow-sm mb-2">
+            <div class="card-body p-3">
+              <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                  <img src="{% static 'images/magic_factory.jpg' %}" class="me-3" width="48" height="48" style="object-fit: cover;">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-1 text-primary">Full Stack Developer</h6>
+                    <p class="mb-1 small">Magic Factory · India (Remote)</p>
+                    <div class="d-flex align-items-center mb-2">
+                      <img src="{% static 'images/connection4.jpg' %}" class="rounded-circle me-1" width="16" height="16">
+                      <small class="text-muted">1 mutual connection with the hiring team</small>
+                    </div>
+                    <div class="mb-2">
+                      <span class="badge bg-primary text-white small">Easy Apply</span>
+                      <span class="text-muted small ms-2">Promoted ·</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-sm">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-3">
+            <a href="#" class="text-decoration-none small">Show all →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="col-lg-3 d-none d-lg-block">
+      <div class="position-sticky" style="top: 70px;">
+        
+        <!-- Top job picks for you -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-body">
+            <h6 class="mb-2">Top job picks for you</h6>
+            <p class="small text-muted mb-3">Based on your profile, preferences, and activity like applies, searches, and saves</p>
+
+            <!-- Software Engineer Intern -->
+            <div class="d-flex mb-3">
+              <img src="{% static 'images/resume_mate.jpg' %}" class="me-2" width="32" height="32">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 text-primary small">Software Engineer Intern</h6>
+                <small class="text-muted">Resume Mate · India (Remote)</small>
+                <div class="mt-1">
+                  <span class="badge bg-primary text-white" style="font-size: 0.6rem;">Easy Apply</span>
+                  <span class="text-muted" style="font-size: 0.65rem;">Promoted</span>
+                </div>
+              </div>
+              <button class="btn btn-sm">
+                <i class="bi bi-x-lg small"></i>
+              </button>
+            </div>
+
+            <!-- Junior Full Stack Developer -->
+            <div class="d-flex mb-3">
+              <img src="{% static 'images/zero360.jpg' %}" class="me-2" width="32" height="32">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 text-primary small">Junior Full Stack Developer</h6>
+                <small class="text-muted">Zero360 Technologies Pvt Ltd · Indore, Madhya Pradesh, India (On-site)</small>
+                <div class="mt-1">
+                  <small class="text-muted">Viewed</small>
+                </div>
+              </div>
+              <button class="btn btn-sm">
+                <i class="bi bi-x-lg small"></i>
+              </button>
+            </div>
+
+            <!-- Python Intern -->
+            <div class="d-flex mb-3">
+              <img src="{% static 'images/zeno_talent.jpg' %}" class="me-2" width="32" height="32">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 text-primary small">Python Intern</h6>
+                <small class="text-muted">Zeno Talent · India (Remote)</small>
+                <div class="mt-1">
+                  <small class="text-muted">Promoted</small>
+                </div>
+              </div>
+              <button class="btn btn-sm">
+                <i class="bi bi-x-lg small"></i>
+              </button>
+            </div>
+
+            <div class="text-center mt-3">
+              <a href="#" class="text-decoration-none small">Show all →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium Section -->
+        <div class="card shadow-sm mb-3 border-warning">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-star-fill text-warning me-1"></i>
+              <span class="text-warning small fw-bold">PREMIUM</span>
+            </div>
+            <h6 class="mb-2 small">Jobs where you'd be a top applicant</h6>
+            <p class="small text-muted mb-3">Based on your chances of hearing back</p>
+            
+            <div class="d-flex align-items-center mb-3">
+              <img src="{% static 'images/profile.jpg' %}" class="rounded-circle me-2" width="32" height="32">
+              <div>
+                <div class="small fw-bold">See the full list of jobs where you'd be a top applicant</div>
+                <div class="d-flex align-items-center mt-1">
+                  <img src="{% static 'images/user1.jpg' %}" class="rounded-circle me-1" width="16" height="16">
+                  <img src="{% static 'images/user2.jpg' %}" class="rounded-circle me-1" width="16" height="16">
+                  <small class="text-muted">Vikas and millions of other members use Premium</small>
+                </div>
+              </div>
+            </div>
+            
+            <button class="btn btn-warning w-100 mb-2 small">Reactivate Premium: 50% Off</button>
+            <small class="text-muted d-block text-center" style="font-size: 0.7rem;">Cancel anytime. No hidden fees.</small>
+          </div>
+        </div>
+
+        <!-- More Jobs -->
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <!-- Walkin Fullstack Developer -->
+            <div class="d-flex mb-3">
+              <img src="{% static 'images/hcltech.jpg' %}" class="me-2" width="32" height="32">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 text-primary small">Walkin Fullstack Developer@Hyderabad <img src="{% static 'images/verified.png' %}" width="12" class="ms-1"></h6>
+                <small class="text-muted">HCLTech · Hyderabad, Telangana, India (On-site)</small>
+                <div class="mt-1">
+                  <small class="text-muted">2 days ago ·</small>
+                  <span class="badge bg-primary text-white" style="font-size: 0.6rem;">Easy Apply</span>
+                </div>
+              </div>
+              <button class="btn btn-sm">
+                <i class="bi bi-x-lg small"></i>
+              </button>
+            </div>
+
+            <!-- Full Stack Engineer -->
+            <div class="d-flex mb-3">
+              <img src="{% static 'images/hire22.jpg' %}" class="me-2" width="32" height="32">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 text-primary small">Full Stack Engineer</h6>
+                <small class="text-muted">Hire22.ai · India (Remote)</small>
+                <div class="mt-1">
+                  <small class="text-muted">6 days ago</small>
+                </div>
+              </div>
+              <button class="btn btn-sm">
+                <i class="bi bi-x-lg small"></i>
+              </button>
+            </div>
+
+            <div class="text-center mt-3">
+              <a href="#" class="text-decoration-none small">Show all →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+@media (min-width: 992px) {
+  .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+  transition: box-shadow 0.2s ease;
+}
+
+.text-primary:hover {
+  text-decoration: underline !important;
+}
+</style>
 {% endblock %}
