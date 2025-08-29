@@ -4,30 +4,174 @@
 {% block title %}Home - LinkedIn Clone{% endblock %}
 
 {% block content %}
-<div class="container-fluid mt-3">
+<style>
+  body {
+    background: #f3f2ef;
+  }
+  .container-fluid {
+    padding-top: 20px;
+  }
+  .main-wrapper {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .sidebar {
+    flex: 0 0 280px;
+    min-width: 250px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .feed {
+    flex: 1 1 600px;
+    max-width: 600px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    background: #fff;
+    margin-bottom: 16px;
+  }
+  .card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 60px;
+    object-fit: cover;
+  }
+  .card-body {
+    padding: 16px;
+  }
+  .post-box input.form-control {
+    border: none;
+    border-radius: 30px;
+    background: #f3f2ef;
+    padding-left: 20px;
+    box-shadow: none;
+    font-size: 16px;
+    height: 48px;
+  }
+  .post-box .card-footer {
+    background: none;
+    border-top: none;
+    padding: 12px 16px;
+  }
+  .post-box .card-footer span {
+    cursor: pointer;
+    font-weight: 500;
+    color: #666;
+    padding: 6px 18px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .post-box .card-footer span:hover {
+    background: #eef3f8;
+  }
+  .feed-post img.img-fluid {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    max-height: 350px;
+    object-fit: cover;
+  }
+  .reaction-bar {
+    background: none;
+    border-top: none;
+    padding: 0 0 8px 0;
+  }
+  .reaction-bar span {
+    cursor: pointer;
+    padding: 6px 18px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    font-weight: 500;
+  }
+  .reaction-bar span:hover {
+    background: #eef3f8;
+  }
+  .sidebar .card {
+    margin-bottom: 16px;
+  }
+  .sidebar .card-body {
+    padding: 16px;
+  }
+  .sidebar .list-unstyled {
+    margin-bottom: 0;
+  }
+  .sidebar .card-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .sidebar .text-muted {
+    font-size: 14px;
+  }
+  .sidebar .card hr {
+    margin: 12px 0;
+  }
+  .sidebar .card small {
+    font-size: 13px;
+  }
+  .sidebar .card ul {
+    padding-left: 0;
+  }
+  .sidebar .card ul li {
+    margin-bottom: 6px;
+  }
+  @media (max-width: 900px) {
+    .main-wrapper {
+      flex-direction: column;
+      gap: 0;
+      max-width: 100%;
+    }
+    .sidebar, .feed {
+      max-width: 100%;
+      min-width: unset;
+      flex: 1 1 100%;
+    }
+  }
+</style>
+<div class="container-fluid">
   <div class="main-wrapper">
 
     <!-- LEFT SIDEBAR -->
     <div class="sidebar">
       <div class="position-sticky" style="top: 70px;">
-        <div class="card text-center mb-3">
+        <div class="card text-center">
           <img src="{% static 'images/banner.jpg' %}" class="card-img-top" alt="Banner">
           <div class="card-body">
             <img src="{% static 'images/profile.jpg' %}" class="rounded-circle mb-2" width="56" height="56" alt="Profile">
-            <h5 class="card-title mb-1">Suryabhan Singh</h5>
-            <p class="text-muted mb-2">Full Stack Developer | Python | React</p>
+            <h5 class="card-title mb-1">Suryabhan Singh <span style="font-size:16px;">&#10004;</span></h5>
+            <p class="text-muted mb-2">Full stack developer | Python | Django | c | c++ | java | React<br>Bhopal, Madhya Pradesh</p>
+            <div class="mb-2" style="font-size:14px;color:#666;">
+              <span style="background:#eef3f8;padding:2px 8px;border-radius:6px;">Fintechedu Solution PVT LTD</span>
+            </div>
             <hr>
-            <p class="mb-1">Profile viewers <span class="float-end text-primary">39</span></p>
-            <p>Post impressions <span class="float-end text-primary">134</span></p>
+            <div class="d-flex justify-content-between mb-2" style="font-size:15px;">
+              <span>Profile viewers</span>
+              <span style="color:#0a66c2;font-weight:600;">45</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2" style="font-size:15px;">
+              <span>Post impressions</span>
+              <span style="color:#0a66c2;font-weight:600;">206</span>
+            </div>
+            <div class="mb-2" style="background:#eef3f8;padding:8px;border-radius:8px;">
+              <span style="color:#666;">Boost your job search</span><br>
+              <span style="color:#0a66c2;font-weight:600;cursor:pointer;">&#9679; Reactivate Premium</span>
+            </div>
           </div>
         </div>
-
-        <div class="card mb-3">
+        <div class="card">
           <div class="card-body">
-            <p class="mb-2">📌 <strong>Saved Items</strong></p>
-            <p>👥 Groups</p>
-            <p>📰 Newsletters</p>
-            <p>📅 Events</p>
+            <div class="mb-2" style="font-weight:600;">Saved items</div>
+            <div class="mb-2"><span style="margin-right:8px;">&#128101;</span>Groups</div>
+            <div class="mb-2"><span style="margin-right:8px;">&#128240;</span>Newsletters</div>
+            <div><span style="margin-right:8px;">&#128197;</span>Events</div>
           </div>
         </div>
       </div>
@@ -35,30 +179,33 @@
 
     <!-- MIDDLE FEED -->
     <div class="feed">
-      <div class="card post-box mb-3 mt-1">
+      <div class="card post-box">
         <div class="card-body d-flex align-items-center">
           <img src="{% static 'images/profile.jpg' %}" class="rounded-circle me-2" width="45" height="45" alt="Profile">
           <input type="text" class="form-control" placeholder="Start a post">
         </div>
         <div class="card-footer d-flex justify-content-around">
-          <span>🎥 Video</span>
-          <span>🖼️ Photo</span>
-          <span>✍️ Write article</span>
+          <span>&#128250; Video</span>
+          <span>&#128247; Photo</span>
+          <span>&#9997;&#65039; Write article</span>
         </div>
       </div>
 
       {% for post in posts %}
-      <div class="card feed-post mb-3 position-relative">
+      <div class="card feed-post position-relative">
         <div class="card-body">
           <div class="d-flex align-items-center mb-2">
             <img src="{% static 'images/' %}{{ post.profile }}" class="rounded-circle me-2" width="40" height="40" alt="{{ post.user }}">
             <div>
-              <strong>{{ post.user }}</strong><br>
-              <small>{{ post.position }}</small>
+              <strong>{{ post.user }}</strong>
+              <span style="font-size:13px;color:#666;">&bull; 1st</span><br>
+              <small class="text-muted">{{ post.position }}</small>
             </div>
           </div>
           <p>{{ post.content }}</p>
+          {% if post.image %}
           <img src="{% static 'images/' %}{{ post.image }}" alt="Post Image" class="img-fluid rounded">
+          {% endif %}
 
           <div class="d-flex justify-content-between text-muted mt-2 px-2" style="font-size: 13px;">
             <div><span>👍❤️👏</span> {{ post.likes }}</div>
@@ -83,14 +230,30 @@
       <div class="position-sticky" style="top: 70px;">
         <div class="card">
           <div class="card-body">
-            <h6>LinkedIn News</h6>
-            <ul class="list-unstyled">
-              <li>📉 Bank loan growth sinks</li>
-              <li>🚀 E-commerce speeds up</li>
-              <li>💸 Student loan rethink</li>
-              <li>🧠 AI helps customer support</li>
-              <li>📈 Ads grab attention</li>
+            <h6 style="font-weight: 600;">LinkedIn News</h6>
+            <ul class="list-unstyled" style="font-size: 14px;">
+              <li>🚀 E-commerce fuels festive hiring<br><span style="color:#666;font-size:12px;">16h ago · 837 readers</span></li>
+              <li>💻 BPOs beat IT services exports<br><span style="color:#666;font-size:12px;">17h ago · 626 readers</span></li>
+              <li>💸 Insurers raise premium values<br><span style="color:#666;font-size:12px;">17h ago · 548 readers</span></li>
+              <li>🧠 Young investors make a comeback<br><span style="color:#666;font-size:12px;">18h ago · 407 readers</span></li>
+              <li>🌧️ Monsoon chaos hits travel<br><span style="color:#666;font-size:12px;">16h ago · 256 readers</span></li>
+              <li style="color:#0a66c2;cursor:pointer;">Show more</li>
             </ul>
+            <hr>
+            <div style="font-weight:600;">Today's puzzles</div>
+            <ul class="list-unstyled" style="font-size: 14px;">
+              <li>✅ Zip #164 <span style="color:#666;font-size:12px;">23 connections played</span></li>
+              <li>✅ Mini Sudoku #17 <span style="color:#666;font-size:12px;">5 connections played</span></li>
+              <li>✅ Tango #325 <span style="color:#666;font-size:12px;">6 connections played</span></li>
+              <li style="color:#0a66c2;cursor:pointer;">Show more</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="{% static 'images/profile.jpg' %}" class="rounded-circle mb-2" width="40" height="40" alt="Premium">
+            <div style="font-weight:600;">Premium</div>
+            <div style="font-size:13px;color:#666;">Boost your job search with AI-powered insights</div>
           </div>
         </div>
         <div class="text-center mt-3">
